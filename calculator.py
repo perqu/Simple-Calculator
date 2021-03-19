@@ -12,12 +12,26 @@ number_1 = 0
 number_2 = 0
 
 # Creating root
+
 root = Tk() 
 root.title("Calculator v.0.0.1")
 
 e = Entry(root, width = 35, borderwidth = 5) #width, fg, bg, borderwidth = 20
 e.grid(row = 0, column = 0, columnspan = 4, padx = 10, pady = 10)
 e.insert(0, "0")
+
+# Creating things
+#label_1 = Label(root, text = 'Hello world!')
+#label_2 = Label(root, text = "My name is Pawel Perenc")
+
+#button_1 = Button(root, text = 'Click me', padx = 50, pady = 20, command = myClick) # state = DISABLED, fg = "", bg = ""
+#button_1.pack()
+
+# Putting things on the screen
+#label_1.grid(row = 0, column = 0)
+#label_2.grid(row = 1, column = 0)
+
+# Functions
 
 def button_click(number):
     current_string = e.get()
@@ -132,26 +146,9 @@ button_equal.grid(row=5, column = 0, columnspan = 2)
 button_backspace.grid(row=5, column = 2)
 button_clear.grid(row=5, column = 3)
 
-# Functions
-'''
-def myClick():
-    label = Label(root, text = e.get())
-    label.pack()
-'''
+
 # Settings
 root.bind('<F11>', lambda event: root.attributes('-fullscreen', not root.attributes("-fullscreen")))
-
-# Creating things
-#label_1 = Label(root, text = 'Hello world!')
-#label_2 = Label(root, text = "My name is Pawel Perenc")
-
-#button_1 = Button(root, text = 'Click me', padx = 50, pady = 20, command = myClick) # state = DISABLED, fg = "", bg = ""
-#button_1.pack()
-
-# Putting things on the screen
-#label_1.grid(row = 0, column = 0)
-#label_2.grid(row = 1, column = 0)
-
 
 root.mainloop()
 
