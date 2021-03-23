@@ -19,13 +19,16 @@ class Calculator():
         pass
 
     def button_click(self, button):
-        if not('.' in self.current_string and button == '.'):
             if self.current_string == '0':
                 self.current_string = str(button)
             else:
                 self.current_string += str(button)
 
-    def set_operation(self, operation):
+    def button_dot(self, button):
+        if not('.' in self.current_string and button == '.'):
+            self.current_string += str(button)
+
+    def button_operation(self, operation):
         self.number2 = 'a'
         self.save_numbers('set')
         self.operation = operation
@@ -33,7 +36,7 @@ class Calculator():
         if operation == '%':
             self.equal()
 
-    def equal(self):
+    def button_equal(self):
         self.save_numbers('equal')
         if isinstance(self.number1, str) or isinstance(self.number2, str):
             self.number2 = self.memory
@@ -55,17 +58,20 @@ class Calculator():
 
         self.current_string = str(result)
 
-    def backspace(self):
+    def button_backspace(self):
         if len(self.current_string)>1:
             self.current_string = self.current_string[:-1]
         else:
             self.current_string = ''
 
-    def clear(self):
+    def button_clear(self):
         self.number1 = 'a'
         self.number2 = 'a'
         self.current_string = ''
         self.operation = 0
+
+    def button_change(self):
+        self.current_string = str(-float(self.current_string))
 
     def save_numbers(self, method):
         try:
