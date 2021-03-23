@@ -24,7 +24,6 @@ class Calculator():
                 self.current_string = str(button)
             else:
                 self.current_string += str(button)
-            self.display_operator()
 
     def set_operation(self, operation):
         self.number2 = 'a'
@@ -33,7 +32,6 @@ class Calculator():
         self.current_string = ''
         if operation == '%':
             self.equal()
-        self.display_operator()
 
     def equal(self):
         self.save_numbers('equal')
@@ -56,21 +54,18 @@ class Calculator():
             self.number2 = 'a'
 
         self.current_string = str(result)
-        self.display_operator()
 
     def backspace(self):
         if len(self.current_string)>1:
             self.current_string = self.current_string[:-1]
         else:
             self.current_string = ''
-        self.display_operator()
 
     def clear(self):
         self.number1 = 'a'
         self.number2 = 'a'
         self.current_string = ''
         self.operation = 0
-        self.display_operator()
 
     def save_numbers(self, method):
         try:
