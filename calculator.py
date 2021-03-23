@@ -32,11 +32,6 @@ button_7 = Button(root, text = '7', width = button_x, height = button_y, command
 button_8 = Button(root, text = '8', width = button_x, height = button_y, command = lambda: calc.button_click(8))
 button_9 = Button(root, text = '9', width = button_x, height = button_y, command = lambda: calc.button_click(9))
 button_0 = Button(root, text = '0', width = button_x, height = button_y, command = lambda: calc.button_click(0))
-button_11 = Button(root, text = '', width = button_x, height = button_y, command = lambda: calc.button_click('0'))
-button_12 = Button(root, text = '', width = button_x, height = button_y, command = lambda: calc.button_click('0'))
-button_13 = Button(root, text = '', width = button_x, height = button_y, command = lambda: calc.button_click('0'))
-button_14 = Button(root, text = '', width = button_x, height = button_y, command = lambda: calc.button_click('0'))
-button_15 = Button(root, text = '', width = button_x, height = button_y, command = lambda: calc.button_click('0'))
 # Button dot
 button_dot = Button(root, text = '.', width = button_x, height = button_y, command = lambda: calc.button_dot('.'))
 # Button operation
@@ -45,6 +40,11 @@ button_add = Button(root, text = '+', width = button_x, height = button_y, comma
 button_dif = Button(root, text = '-', width = button_x, height = button_y, command = lambda: calc.button_operation('-'))
 button_mul = Button(root, text = '*', width = button_x, height = button_y, command = lambda: calc.button_operation('*'))
 button_div = Button(root, text = '/', width = button_x, height = button_y, command = lambda: calc.button_operation('/'))
+button_mod = Button(root, text = 'mod', width = button_x, height = button_y, command = lambda: calc.button_operation('mod'))
+button_x2 = Button(root, text = 'x**2', width = button_x, height = button_y, command = lambda: calc.button_operation('**2'))
+button_xy = Button(root, text = 'x**y', width = button_x, height = button_y, command = lambda: calc.button_operation('**'))
+button_2p = Button(root, text = '2 _\n√x', width = button_x, height = button_y, command = lambda: calc.button_operation('2√'))
+button_yp = Button(root, text = 'y _\n√x', width = button_x, height = button_y, command = lambda: calc.button_operation('√'))
 # Button equal
 button_equal = Button(root, text = '=', width = button_x, height = button_y, command = calc.button_equal)
 # Button change
@@ -86,11 +86,11 @@ button_div.grid(row=4, column = 3)
 button_percentage.grid(row=5, column = 3)
 
 # Column 4
-button_11.grid(row=1, column = 4)
-button_12.grid(row=2, column = 4)
-button_13.grid(row=3, column = 4)
-button_14.grid(row=4, column = 4)
-button_15.grid(row=5, column = 4)
+button_mod.grid(row=1, column = 4)
+button_x2.grid(row=2, column = 4)
+button_xy.grid(row=3, column = 4)
+button_2p.grid(row=4, column = 4)
+button_yp.grid(row=5, column = 4)
 
 # Keybinds
 root.bind('<F11>', lambda event: root.attributes('-fullscreen', not root.attributes("-fullscreen")))

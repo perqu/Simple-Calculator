@@ -1,4 +1,5 @@
 import sys
+import math
 if sys.version_info[0] == 2:  # Just checking your Python version to import Tkinter properly.
     from Tkinter import *
 else:
@@ -33,8 +34,8 @@ class Calculator():
         self.save_numbers('set')
         self.operation = operation
         self.current_string = ''
-        if operation == '%':
-            self.equal()
+        if operation == '%' or operation == '**2' or operation == '2√':
+            self.button_equal()
 
     def button_equal(self):
         self.save_numbers('equal')
@@ -49,6 +50,16 @@ class Calculator():
             result = self.number1 * self.number2
         elif self.operation == '/':
             result = self.number1 / self.number2
+        elif self.operation == 'mod':
+            result = self.number1 % self.number2
+        elif self.operation == '**':
+            result = self.number1 ** self.number2
+        elif self.operation == '2√':
+            result = self.number1 ** (1/2)
+        elif self.operation == '√':
+            result = self.number1 ** (1/self.number2)
+        elif self.operation == '**2':
+            result = self.number1 ** 2
         elif self.operation == '%':
             result = self.number1/100
 
