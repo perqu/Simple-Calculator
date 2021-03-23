@@ -27,13 +27,13 @@ class Calculator():
             self.display_operator()
 
     def set_operation(self, operation_id):
-        if self.current_string != '':
-            self.save_numbers('set')
-            self.operation = operation_id
-            self.current_string = ''
-            if operation_id == 5:
-                self.equal()
-            self.display_operator()
+        self.number2 = 'a'
+        self.save_numbers('set')
+        self.operation = operation_id
+        self.current_string = ''
+        if operation_id == 5:
+            self.equal()
+        self.display_operator()
 
     def equal(self):
         self.save_numbers('equal')
