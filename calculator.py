@@ -16,7 +16,7 @@ display = Entry(root, width = 35, borderwidth = 5) #width, fg, bg, borderwidth =
 display.grid(row = 0, column = 0, columnspan = 4, padx = 10, pady = 10)
 display.insert(0, "0")
 
-calc = class_calculator.Calculator(display)
+calc = class_calculator.Calculator()
 
 def display_number():
     root.after(100,display_number)
@@ -38,11 +38,11 @@ button_8 = Button(root, text = '8', width = button_x, height = button_y, command
 button_9 = Button(root, text = '9', width = button_x, height = button_y, command = lambda: calc.button_click(9))
 button_0 = Button(root, text = '0', width = button_x, height = button_y, command = lambda: calc.button_click(0))
 button_dot = Button(root, text = '.', width = button_x, height = button_y, command = lambda: calc.button_click('.'))
-button_percentage = Button(root, text = '%', width = button_x, height = button_y, command = lambda: calc.set_operation(5))
-button_add = Button(root, text = '+', width = button_x, height = button_y, command = lambda: calc.set_operation(1))
-button_dif = Button(root, text = '-', width = button_x, height = button_y, command = lambda: calc.set_operation(2))
-button_mul = Button(root, text = '*', width = button_x, height = button_y, command = lambda: calc.set_operation(3))
-button_div = Button(root, text = '/', width = button_x, height = button_y, command = lambda: calc.set_operation(4))
+button_percentage = Button(root, text = '%', width = button_x, height = button_y, command = lambda: calc.set_operation('%'))
+button_add = Button(root, text = '+', width = button_x, height = button_y, command = lambda: calc.set_operation('+'))
+button_dif = Button(root, text = '-', width = button_x, height = button_y, command = lambda: calc.set_operation('-'))
+button_mul = Button(root, text = '*', width = button_x, height = button_y, command = lambda: calc.set_operation('*'))
+button_div = Button(root, text = '/', width = button_x, height = button_y, command = lambda: calc.set_operation('/'))
 button_equal = Button(root, text = '=', width = 25, height = button_y, command = calc.equal)
 button_backspace = Button(root, text = '<--', width = 11, height = button_y, command = calc.backspace)
 button_clear = Button(root, text = 'clear', width = 11, height = button_y, command = calc.clear)
