@@ -1,8 +1,15 @@
 import sys
+import tkinter.font as font
 if sys.version_info[0] == 2:  # Just checking your Python version to import Tkinter properly.
     from Tkinter import *
 else:
     from tkinter import *
+
+'''
+import win32gui, win32con
+the_program_to_hide = win32gui.GetForegroundWindow()
+win32gui.ShowWindow(the_program_to_hide , win32con.SW_HIDE)
+'''
 
 def display_number():
     root.after(100,display_number)
@@ -14,48 +21,51 @@ import class_calculator
 root = Tk() 
 root.title("Calculator v.0.0.1")
 
-display = Entry(root, width = 35, borderwidth = 5) #width, fg, bg, borderwidth = 20
+#font
+myFont = font.Font(family='Helvetica', size=30, weight='bold')
+
+display = Entry(root, width = 27, font = myFont, borderwidth = 5) #width, fg, bg, borderwidth = 20
 
 calc = class_calculator.Calculator()
 
 # size of buttons
-button_x = 7
-button_y = 3
+button_x = 5
+button_y = 2
 # Button click
-button_1 = Button(root, text = '1', width = button_x, height = button_y, command = lambda: calc.button_click(1))
-button_2 = Button(root, text = '2', width = button_x, height = button_y, command = lambda: calc.button_click(2))
-button_3 = Button(root, text = '3', width = button_x, height = button_y, command = lambda: calc.button_click(3))
-button_4 = Button(root, text = '4', width = button_x, height = button_y, command = lambda: calc.button_click(4))
-button_5 = Button(root, text = '5', width = button_x, height = button_y, command = lambda: calc.button_click(5))
-button_6 = Button(root, text = '6', width = button_x, height = button_y, command = lambda: calc.button_click(6))
-button_7 = Button(root, text = '7', width = button_x, height = button_y, command = lambda: calc.button_click(7))
-button_8 = Button(root, text = '8', width = button_x, height = button_y, command = lambda: calc.button_click(8))
-button_9 = Button(root, text = '9', width = button_x, height = button_y, command = lambda: calc.button_click(9))
-button_0 = Button(root, text = '0', width = button_x, height = button_y, command = lambda: calc.button_click(0))
+button_1 = Button(root, text = '1', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_click(1))
+button_2 = Button(root, text = '2', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_click(2))
+button_3 = Button(root, text = '3', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_click(3))
+button_4 = Button(root, text = '4', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_click(4))
+button_5 = Button(root, text = '5', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_click(5))
+button_6 = Button(root, text = '6', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_click(6))
+button_7 = Button(root, text = '7', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_click(7))
+button_8 = Button(root, text = '8', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_click(8))
+button_9 = Button(root, text = '9', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_click(9))
+button_0 = Button(root, text = '0', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_click(0))
 # Button dot
-button_dot = Button(root, text = '.', width = button_x, height = button_y, command = lambda: calc.button_dot('.'))
+button_dot = Button(root, text = '.', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_dot('.'))
 # Button operation
-button_percentage = Button(root, text = '%', width = button_x, height = button_y, command = lambda: calc.button_operation('%'))
-button_add = Button(root, text = '+', width = button_x, height = button_y, command = lambda: calc.button_operation('+'))
-button_dif = Button(root, text = '-', width = button_x, height = button_y, command = lambda: calc.button_operation('-'))
-button_mul = Button(root, text = '*', width = button_x, height = button_y, command = lambda: calc.button_operation('*'))
-button_div = Button(root, text = '/', width = button_x, height = button_y, command = lambda: calc.button_operation('/'))
-button_mod = Button(root, text = 'mod', width = button_x, height = button_y, command = lambda: calc.button_operation('mod'))
-button_x2 = Button(root, text = 'x**2', width = button_x, height = button_y, command = lambda: calc.button_operation('**2'))
-button_xy = Button(root, text = 'x**y', width = button_x, height = button_y, command = lambda: calc.button_operation('**'))
-button_2p = Button(root, text = '2 _\n√x', width = button_x, height = button_y, command = lambda: calc.button_operation('2√'))
-button_yp = Button(root, text = 'y _\n√x', width = button_x, height = button_y, command = lambda: calc.button_operation('√'))
+button_percentage = Button(root, text = '%', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_operation('%'))
+button_add = Button(root, text = '+', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_operation('+'))
+button_dif = Button(root, text = '-', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_operation('-'))
+button_mul = Button(root, text = '*', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_operation('*'))
+button_div = Button(root, text = '/', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_operation('/'))
+button_mod = Button(root, text = 'mod', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_operation('mod'))
+button_x2 = Button(root, text = 'x**2', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_operation('** 2'))
+button_xy = Button(root, text = 'x**y', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_operation('**'))
+button_2p = Button(root, text = '2 _\n√x', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_operation('2√'))
+button_yp = Button(root, text = 'y _\n√x', font = myFont, width = button_x, height = button_y, command = lambda: calc.button_operation('√'))
 # Button equal
-button_equal = Button(root, text = '=', width = button_x, height = button_y, command = calc.button_equal)
+button_equal = Button(root, text = '=', font = myFont, width = button_x, height = button_y, command = calc.button_equal)
 # Button change
-button_change = Button(root, text = '+/-', width = button_x, height = button_y, command = calc.button_change)
+button_change = Button(root, text = '+/-', font = myFont, width = button_x, height = button_y, command = calc.button_change)
 # Button backspace
-button_backspace = Button(root, text = '<--', width = button_x, height = button_y, command = calc.button_backspace)
+button_backspace = Button(root, text = '<--', font = myFont, width = button_x, height = button_y, command = calc.button_backspace)
 # Button clear
-button_clear = Button(root, text = 'clear', width = button_x, height = button_y, command = calc.button_clear)
+button_clear = Button(root, text = 'clear', font = myFont, width = button_x, height = button_y, command = calc.button_clear)
 
 # Display - row 0
-display.grid(row = 0, column = 0, columnspan = 8, padx = 10, pady = 10)
+display.grid(row = 0, column = 0, columnspan = 5, padx = 10, pady = 10)
 
 # Column 0
 button_7.grid(row=1, column = 0)
